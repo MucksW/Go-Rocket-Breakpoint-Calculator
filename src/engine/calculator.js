@@ -144,7 +144,7 @@ export function generateBreakPointMatrix(attacker, fastMove, defenderMon, traine
     
     for (let iv = 15; iv >= 0; iv--) {
       const dmg = calculateFastDamage(attacker, fastMove, level, iv, defenderStats);
-      const hitsNeeded = Math.ceil(defenderStats.hp / dmg);
+      const hitsNeeded = Math.ceil(Math.floor(defenderStats.hp) / dmg);
       const totalTurns = hitsNeeded * fastMove.turns;
 
       row.ivs.push({
