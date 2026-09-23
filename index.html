@@ -48,7 +48,7 @@
       </div>
 
       <div class="control-group checkbox-group">
-        <label for="bestBuddyToggle">Show Best Buddy Levels (50.5 & 51)</label>
+        <label for="bestBuddyToggle">Show Best Buddy Levels</label>
         <input type="checkbox" id="bestBuddyToggle">
       </div>
     </section>
@@ -69,5 +69,14 @@
   </main>
 
   <script type="module" src="src/ui/app.js"></script>
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('mucks', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': '#4CAF50',
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
 </body>
 </html>
