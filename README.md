@@ -8,3 +8,4 @@ Special thanks to the community researchers and projects whose data and formulas
 
 - Pokémon GO Hub: For providing the CPM values.
 - NFL Research Team: For providing the CPMR values.
+- PvPoke: Data source for Pokémon and moves.
