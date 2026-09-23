@@ -1,0 +1,16 @@
+{
+  "name": "rocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:data": "node scripts/build-gamemaster.js",
+    "update-gm": "node scripts/update-gamemaster.js",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "keywords": [],
+  "type": "module"
+}

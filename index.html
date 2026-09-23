@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GO Rocket Breakpoint Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>GO Rocket Breakpoint Calculator</h1>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="control-group">
+        <label for="trainerLevel">Trainer Level:</label>
+        <input type="number" id="trainerLevel" value="80" min="8" max="80">
+      </div>
+
+      <div class="control-group">
+        <label for="rocketTypeSelect">Rocket Type:</label>
+        <select id="rocketTypeSelect">
+          <option value="1.0">Grunt</option>
+          <option value="1.2">Leader</option>
+          <option value="1.5">Boss</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="attackerInput">Attacker:</label>
+        <input type="text" id="attackerInput" list="attackerList" placeholder="Search or select attacker..." autocomplete="off">
+        <datalist id="attackerList"></datalist>
+      </div>
+
+      <div class="control-group">
+        <label for="fastMoveSelect">Fast Move:</label>
+        <select id="fastMoveSelect"></select>
+      </div>
+
+      <div class="control-group">
+        <label for="defenderInput">Defender:</label>
+        <div class="defender-wrapper">
+          <input type="text" id="defenderInput" list="defenderList" placeholder="Search or select defender..." autocomplete="off">
+          <datalist id="defenderList"></datalist>
+          <span id="oppCpDisplay" class="cp-badge">CP: --</span>
+        </div>
+      </div>
+
+      <div class="control-group checkbox-group">
+        <label for="bestBuddyToggle">Show Best Buddy Levels (50.5 & 51)</label>
+        <input type="checkbox" id="bestBuddyToggle">
+      </div>
+    </section>
+
+    <section class="matrix-container">
+      <h2>Turns to Victory</h2>
+      <div class="table-wrapper">
+        <table id="matrixTable">
+          <thead>
+            <tr id="tableHeader">
+              <th>Lv \ IV</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="src/ui/app.js"></script>
+</body>
+</html>

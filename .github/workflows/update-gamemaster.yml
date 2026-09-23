@@ -1,0 +1,56 @@
+name: Check & Update GameMaster Data
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check Commit-SHA of PvPoke GameMaster
+        id: check_upstream
+        run: |
+          LATEST_SHA=$(curl -s "https://api.github.com/repos/pvpoke/pvpoke/commits?path=src/data/gamemaster.json&per_page=1" | jq -r '.[0].sha')
+          echo "Latest Upstream-SHA: $LATEST_SHA"
+
+          SHA_FILE="src/data/.upstream_sha"
+          LAST_SHA=""
+          if [ -f "$SHA_FILE" ]; then
+            LAST_SHA=$(cat "$SHA_FILE")
+          fi
+
+          if [ "$LATEST_SHA" = "$LAST_SHA" ]; then
+            echo "No changes available."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "New game data detected!"
+            echo "$LATEST_SHA" > "$SHA_FILE"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Node.js
+        if: steps.check_upstream.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update GameMaster JSONs
+        if: steps.check_upstream.outputs.changed == 'true'
+        run: node scripts/update-gamemaster.js
+
+      - name: Commit changes and push
+        if: steps.check_upstream.outputs.changed == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/
+          git commit -m "chore: auto-update GameMaster JSONs"
+          git push
