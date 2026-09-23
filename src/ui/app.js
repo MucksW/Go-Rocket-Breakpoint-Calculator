@@ -1,5 +1,3 @@
-import pokemonData from '../data/pokemon.json' assert { type: 'json' };
-import movesData from '../data/moves.json' assert { type: 'json' };
 import { generateBreakPointMatrix, getRocketDefenderStats } from '../engine/calculator.js';
 
 const attackerInput = document.getElementById('attackerInput');
@@ -16,8 +14,27 @@ const oppCpDisplay = document.getElementById('oppCpDisplay');
 const tableHeader = document.getElementById('tableHeader');
 const tableBody = document.getElementById('tableBody');
 
+let pokemonData = [];
+let movesData = { fastMoves: {} };
+
 let currentAttacker = null;
 let currentDefender = null;
+
+// Lade JSON-Dateien dynamisch (Funktioniert 100% auf GitHub Pages)
+async function loadData() {
+  try {
+    const [pRes, mRes] = await Promise.all([
+      fetch('./src/data/pokemon.json'),
+      fetch('./src/data/moves.json')
+    ]);
+    pokemonData = await pRes.json();
+    movesData = await mRes.json();
+
+    initControls();
+  } catch (err) {
+    console.error('Fehler beim Laden der Spieldaten:', err);
+  }
+}
 
 function updateAttackerDatalist(query = '') {
   attackerList.innerHTML = '';
@@ -219,4 +236,5 @@ trainerLevelInput.addEventListener('input', () => { updateOpponentCp(); renderMa
 rocketTypeSelect.addEventListener('change', () => { updateOpponentCp(); renderMatrix(); });
 bestBuddyToggle.addEventListener('change', renderMatrix);
 
-initControls();
+// Anwendung starten
+loadData();
