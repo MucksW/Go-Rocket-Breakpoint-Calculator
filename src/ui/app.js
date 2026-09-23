@@ -20,7 +20,24 @@ let movesData = { fastMoves: {} };
 let currentAttacker = null;
 let currentDefender = null;
 
-// Lade JSON-Dateien dynamisch (Funktioniert 100% auf GitHub Pages)
+// Avoid unnecessary re-rendering if the same Pokémon is selected again
+let lastAttackerId = null;
+let lastDefenderId = null;
+
+// Debounce function to limit the rate of function execution
+function debounce(func, wait = 150) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Load Pokémon and Moves data from local JSON files
 async function loadData() {
   try {
     const [pRes, mRes] = await Promise.all([
@@ -32,41 +49,51 @@ async function loadData() {
 
     initControls();
   } catch (err) {
-    console.error('Fehler beim Laden der Spieldaten:', err);
+    console.error('Error loading game data:', err);
   }
 }
 
 function updateAttackerDatalist(query = '') {
-  attackerList.innerHTML = '';
   const q = query.toLowerCase().trim();
+  if (q.length < 2 && q.length > 0) return; // Search only after 2 characters
+
+  const fragment = document.createDocumentFragment();
   const filtered = pokemonData.filter(mon => mon.name.toLowerCase().includes(q));
 
-  filtered.slice(0, 50).forEach(mon => {
+  filtered.slice(0, 30).forEach(mon => {
     const opt = document.createElement('option');
     opt.value = mon.name;
-    attackerList.appendChild(opt);
+    fragment.appendChild(opt);
   });
+
+  attackerList.innerHTML = '';
+  attackerList.appendChild(fragment);
 }
 
 function updateDefenderDatalist(query = '') {
-  defenderList.innerHTML = '';
   const q = query.toLowerCase().trim();
+  if (q.length < 2 && q.length > 0) return; // Search only after 2 characters
+
+  const fragment = document.createDocumentFragment();
   const filtered = pokemonData.filter(mon => {
     const isMega = mon.isMega || mon.id.includes('_MEGA') || mon.name.toLowerCase().includes('mega');
     const isShadow = mon.isShadow || mon.id.includes('_SHADOW') || mon.name.toLowerCase().includes('shadow');
     return !isMega && !isShadow && mon.name.toLowerCase().includes(q);
   });
 
-  filtered.slice(0, 50).forEach(mon => {
+  filtered.slice(0, 30).forEach(mon => {
     const opt = document.createElement('option');
     opt.value = mon.name;
-    defenderList.appendChild(opt);
+    fragment.appendChild(opt);
   });
+
+  defenderList.innerHTML = '';
+  defenderList.appendChild(fragment);
 }
 
 function resolveAttacker(query) {
   const q = query.toLowerCase().trim();
-  if (!q) return pokemonData[0];
+  if (!q) return currentAttacker || pokemonData[0];
 
   const exact = pokemonData.find(p => p.name.toLowerCase() === q);
   if (exact) return exact;
@@ -88,7 +115,7 @@ function resolveDefender(query) {
     return !isMega && !isShadow;
   });
 
-  if (!q) return validDefenders[0];
+  if (!q) return currentDefender || validDefenders[0];
 
   const exact = validDefenders.find(p => p.name.toLowerCase() === q);
   if (exact) return exact;
@@ -170,8 +197,8 @@ function renderMatrix() {
   
   oppCpDisplay.textContent = `CP: ${defenderStats.cp.toLocaleString()}`;
 
-  tableBody.innerHTML = '';
-
+  // Performance optimization: Use DocumentFragment to minimize reflows and repaints
+  const fragment = document.createDocumentFragment();
   const bestTurns = matrix[0]?.ivs[0]?.turns || 1;
 
   matrix.forEach(row => {
@@ -194,41 +221,59 @@ function renderMatrix() {
       tr.appendChild(td);
     });
 
-    tableBody.appendChild(tr);
+    fragment.appendChild(tr);
   });
+
+  tableBody.innerHTML = '';
+  tableBody.appendChild(fragment);
+
+  // Save status
+  lastAttackerId = currentAttacker.id;
+  lastDefenderId = currentDefender.id;
 }
 
+// Handler with Debounce for smooth typing on mobile devices
+const handleAttackerInput = debounce((query) => {
+  updateAttackerDatalist(query);
+  const resolved = resolveAttacker(query);
+
+  if (resolved && resolved.id !== lastAttackerId) {
+    currentAttacker = resolved;
+    updateFastMoves();
+    renderMatrix();
+  }
+}, 150);
+
+const handleDefenderInput = debounce((query) => {
+  updateDefenderDatalist(query);
+  const resolved = resolveDefender(query);
+
+  if (resolved && resolved.id !== lastDefenderId) {
+    currentDefender = resolved;
+    updateOpponentCp();
+    renderMatrix();
+  }
+}, 150);
+
+// Event-Listener
 attackerInput.addEventListener('input', (e) => {
   const query = e.target.value;
-  updateAttackerDatalist(query);
-  currentAttacker = resolveAttacker(query);
-
   const exactMatch = pokemonData.some(p => p.name.toLowerCase() === query.trim().toLowerCase());
-  if (exactMatch) {
-    e.target.blur();
-  }
+  if (exactMatch) e.target.blur();
 
-  updateFastMoves();
-  renderMatrix();
+  handleAttackerInput(query);
 });
 
 defenderInput.addEventListener('input', (e) => {
   const query = e.target.value;
-  updateDefenderDatalist(query);
-  currentDefender = resolveDefender(query);
-
   const exactMatch = pokemonData.some(mon => {
     const isMega = mon.isMega || mon.id.includes('_MEGA') || mon.name.toLowerCase().includes('mega');
     const isShadow = mon.isShadow || mon.id.includes('_SHADOW') || mon.name.toLowerCase().includes('shadow');
     return !isMega && !isShadow && mon.name.toLowerCase() === query.trim().toLowerCase();
   });
+  if (exactMatch) e.target.blur();
 
-  if (exactMatch) {
-    e.target.blur();
-  }
-
-  updateOpponentCp();
-  renderMatrix();
+  handleDefenderInput(query);
 });
 
 fastMoveSelect.addEventListener('change', renderMatrix);
@@ -236,5 +281,5 @@ trainerLevelInput.addEventListener('input', () => { updateOpponentCp(); renderMa
 rocketTypeSelect.addEventListener('change', () => { updateOpponentCp(); renderMatrix(); });
 bestBuddyToggle.addEventListener('change', renderMatrix);
 
-// Anwendung starten
+// Start the application
 loadData();
