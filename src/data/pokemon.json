@@ -1294,6 +1294,26 @@
     "isMega": false
   },
   {
+    "id": "RAICHU_ALOLAN",
+    "name": "Raichu (Alolan)",
+    "types": [
+      "ELECTRIC",
+      "PSYCHIC"
+    ],
+    "baseStats": {
+      "atk": 201,
+      "def": 154,
+      "hp": 155
+    },
+    "fastMoves": [
+      "SPARK",
+      "VOLT_SWITCH",
+      "THUNDER_SHOCK"
+    ],
+    "isShadow": false,
+    "isMega": false
+  },
+  {
     "id": "RAICHU_MEGA_X",
     "name": "Raichu (Mega X)",
     "types": [
@@ -1334,26 +1354,6 @@
     ],
     "isShadow": false,
     "isMega": true
-  },
-  {
-    "id": "RAICHU_ALOLAN",
-    "name": "Raichu (Alolan)",
-    "types": [
-      "ELECTRIC",
-      "PSYCHIC"
-    ],
-    "baseStats": {
-      "atk": 201,
-      "def": 154,
-      "hp": 155
-    },
-    "fastMoves": [
-      "SPARK",
-      "VOLT_SWITCH",
-      "THUNDER_SHOCK"
-    ],
-    "isShadow": false,
-    "isMega": false
   },
   {
     "id": "SANDSHREW",
@@ -5683,42 +5683,6 @@
     "isMega": false
   },
   {
-    "id": "STARMIE_SHADOW",
-    "name": "Starmie (Shadow)",
-    "types": [
-      "WATER",
-      "PSYCHIC"
-    ],
-    "baseStats": {
-      "atk": 210,
-      "def": 184,
-      "hp": 155
-    },
-    "fastMoves": [
-      "HIDDEN_POWER_BUG",
-      "HIDDEN_POWER_DARK",
-      "HIDDEN_POWER_DRAGON",
-      "HIDDEN_POWER_ELECTRIC",
-      "HIDDEN_POWER_FIGHTING",
-      "HIDDEN_POWER_FIRE",
-      "HIDDEN_POWER_FLYING",
-      "HIDDEN_POWER_GHOST",
-      "HIDDEN_POWER_GRASS",
-      "HIDDEN_POWER_GROUND",
-      "HIDDEN_POWER_ICE",
-      "HIDDEN_POWER_POISON",
-      "HIDDEN_POWER_PSYCHIC",
-      "HIDDEN_POWER_ROCK",
-      "HIDDEN_POWER_STEEL",
-      "HIDDEN_POWER_WATER",
-      "TACKLE",
-      "WATER_GUN",
-      "PSYWAVE"
-    ],
-    "isShadow": true,
-    "isMega": false
-  },
-  {
     "id": "STARMIE_MEGA",
     "name": "Starmie (Mega)",
     "types": [
@@ -5754,6 +5718,42 @@
     ],
     "isShadow": false,
     "isMega": true
+  },
+  {
+    "id": "STARMIE_SHADOW",
+    "name": "Starmie (Shadow)",
+    "types": [
+      "WATER",
+      "PSYCHIC"
+    ],
+    "baseStats": {
+      "atk": 210,
+      "def": 184,
+      "hp": 155
+    },
+    "fastMoves": [
+      "HIDDEN_POWER_BUG",
+      "HIDDEN_POWER_DARK",
+      "HIDDEN_POWER_DRAGON",
+      "HIDDEN_POWER_ELECTRIC",
+      "HIDDEN_POWER_FIGHTING",
+      "HIDDEN_POWER_FIRE",
+      "HIDDEN_POWER_FLYING",
+      "HIDDEN_POWER_GHOST",
+      "HIDDEN_POWER_GRASS",
+      "HIDDEN_POWER_GROUND",
+      "HIDDEN_POWER_ICE",
+      "HIDDEN_POWER_POISON",
+      "HIDDEN_POWER_PSYCHIC",
+      "HIDDEN_POWER_ROCK",
+      "HIDDEN_POWER_STEEL",
+      "HIDDEN_POWER_WATER",
+      "TACKLE",
+      "WATER_GUN",
+      "PSYWAVE"
+    ],
+    "isShadow": true,
+    "isMega": false
   },
   {
     "id": "MR_MIME",
@@ -7765,26 +7765,6 @@
     "isMega": false
   },
   {
-    "id": "LANTURNW",
-    "name": "Lanturn",
-    "types": [
-      "WATER",
-      "ELECTRIC"
-    ],
-    "baseStats": {
-      "atk": 146,
-      "def": 137,
-      "hp": 268
-    },
-    "fastMoves": [
-      "CHARGE_BEAM",
-      "WATER_GUN",
-      "SPARK"
-    ],
-    "isShadow": false,
-    "isMega": false
-  },
-  {
     "id": "PICHU",
     "name": "Pichu",
     "types": [
@@ -9762,25 +9742,6 @@
     "isMega": false
   },
   {
-    "id": "SKARMORY_SHADOW",
-    "name": "Skarmory (Shadow)",
-    "types": [
-      "STEEL",
-      "FLYING"
-    ],
-    "baseStats": {
-      "atk": 148,
-      "def": 226,
-      "hp": 163
-    },
-    "fastMoves": [
-      "AIR_SLASH",
-      "STEEL_WING"
-    ],
-    "isShadow": true,
-    "isMega": false
-  },
-  {
     "id": "SKARMORY_MEGA",
     "name": "Skarmory (Mega)",
     "types": [
@@ -9798,6 +9759,25 @@
     ],
     "isShadow": false,
     "isMega": true
+  },
+  {
+    "id": "SKARMORY_SHADOW",
+    "name": "Skarmory (Shadow)",
+    "types": [
+      "STEEL",
+      "FLYING"
+    ],
+    "baseStats": {
+      "atk": 148,
+      "def": 226,
+      "hp": 163
+    },
+    "fastMoves": [
+      "AIR_SLASH",
+      "STEEL_WING"
+    ],
+    "isShadow": true,
+    "isMega": false
   },
   {
     "id": "HOUNDOUR",
@@ -16136,27 +16116,6 @@
     "isMega": false
   },
   {
-    "id": "STARAPTOR_SHADOW",
-    "name": "Staraptor (Shadow)",
-    "types": [
-      "NORMAL",
-      "FLYING"
-    ],
-    "baseStats": {
-      "atk": 234,
-      "def": 140,
-      "hp": 198
-    },
-    "fastMoves": [
-      "QUICK_ATTACK",
-      "WING_ATTACK",
-      "GUST",
-      "SAND_ATTACK"
-    ],
-    "isShadow": true,
-    "isMega": false
-  },
-  {
     "id": "STARAPTOR_MEGA",
     "name": "Staraptor (Mega)",
     "types": [
@@ -16176,6 +16135,27 @@
     ],
     "isShadow": false,
     "isMega": true
+  },
+  {
+    "id": "STARAPTOR_SHADOW",
+    "name": "Staraptor (Shadow)",
+    "types": [
+      "NORMAL",
+      "FLYING"
+    ],
+    "baseStats": {
+      "atk": 234,
+      "def": 140,
+      "hp": 198
+    },
+    "fastMoves": [
+      "QUICK_ATTACK",
+      "WING_ATTACK",
+      "GUST",
+      "SAND_ATTACK"
+    ],
+    "isShadow": true,
+    "isMega": false
   },
   {
     "id": "BIDOOF",
@@ -24582,6 +24562,25 @@
     "isMega": false
   },
   {
+    "id": "ZEKROM_SHADOW",
+    "name": "Zekrom (Shadow)",
+    "types": [
+      "DRAGON",
+      "ELECTRIC"
+    ],
+    "baseStats": {
+      "atk": 275,
+      "def": 211,
+      "hp": 205
+    },
+    "fastMoves": [
+      "DRAGON_BREATH",
+      "CHARGE_BEAM"
+    ],
+    "isShadow": true,
+    "isMega": false
+  },
+  {
     "id": "LANDORUS_INCARNATE",
     "name": "Landorus (Incarnate)",
     "types": [
@@ -25687,6 +25686,25 @@
     "isMega": false
   },
   {
+    "id": "PANCHAM_SHADOW",
+    "name": "Pancham (Shadow)",
+    "types": [
+      "FIGHTING",
+      "NONE"
+    ],
+    "baseStats": {
+      "atk": 145,
+      "def": 107,
+      "hp": 167
+    },
+    "fastMoves": [
+      "LOW_KICK",
+      "TACKLE"
+    ],
+    "isShadow": true,
+    "isMega": false
+  },
+  {
     "id": "PANGORO",
     "name": "Pangoro",
     "types": [
@@ -25705,6 +25723,27 @@
       "KARATE_CHOP"
     ],
     "isShadow": false,
+    "isMega": false
+  },
+  {
+    "id": "PANGORO_SHADOW",
+    "name": "Pangoro (Shadow)",
+    "types": [
+      "FIGHTING",
+      "DARK"
+    ],
+    "baseStats": {
+      "atk": 226,
+      "def": 146,
+      "hp": 216
+    },
+    "fastMoves": [
+      "LOW_KICK",
+      "SNARL",
+      "BULLET_PUNCH",
+      "KARATE_CHOP"
+    ],
+    "isShadow": true,
     "isMega": false
   },
   {
@@ -28059,6 +28098,26 @@
     "isMega": false
   },
   {
+    "id": "FOMANTIS_SHADOW",
+    "name": "Fomantis (Shadow)",
+    "types": [
+      "GRASS",
+      "NONE"
+    ],
+    "baseStats": {
+      "atk": 100,
+      "def": 64,
+      "hp": 120
+    },
+    "fastMoves": [
+      "RAZOR_LEAF",
+      "FURY_CUTTER",
+      "LEAFAGE"
+    ],
+    "isShadow": true,
+    "isMega": false
+  },
+  {
     "id": "LURANTIS",
     "name": "Lurantis",
     "types": [
@@ -28076,6 +28135,26 @@
       "LEAFAGE"
     ],
     "isShadow": false,
+    "isMega": false
+  },
+  {
+    "id": "LURANTIS_SHADOW",
+    "name": "Lurantis (Shadow)",
+    "types": [
+      "GRASS",
+      "NONE"
+    ],
+    "baseStats": {
+      "atk": 192,
+      "def": 169,
+      "hp": 172
+    },
+    "fastMoves": [
+      "RAZOR_LEAF",
+      "FURY_CUTTER",
+      "LEAFAGE"
+    ],
+    "isShadow": true,
     "isMega": false
   },
   {
@@ -28399,6 +28478,24 @@
     "isMega": false
   },
   {
+    "id": "WIMPOD_SHADOW",
+    "name": "Wimpod (Shadow)",
+    "types": [
+      "BUG",
+      "WATER"
+    ],
+    "baseStats": {
+      "atk": 67,
+      "def": 74,
+      "hp": 93
+    },
+    "fastMoves": [
+      "STRUGGLE_BUG"
+    ],
+    "isShadow": true,
+    "isMega": false
+  },
+  {
     "id": "GOLISOPOD",
     "name": "Golisopod",
     "types": [
@@ -28420,8 +28517,8 @@
     "isMega": false
   },
   {
-    "id": "GOLISOPODSH",
-    "name": "Golisopod",
+    "id": "GOLISOPOD_SHADOW",
+    "name": "Golisopod (Shadow)",
     "types": [
       "BUG",
       "WATER"
@@ -28437,7 +28534,7 @@
       "WATERFALL",
       "SHADOW_CLAW"
     ],
-    "isShadow": false,
+    "isShadow": true,
     "isMega": false
   },
   {
@@ -28461,6 +28558,26 @@
     "isMega": false
   },
   {
+    "id": "SANDYGAST_SHADOW",
+    "name": "Sandygast (Shadow)",
+    "types": [
+      "GHOST",
+      "GROUND"
+    ],
+    "baseStats": {
+      "atk": 120,
+      "def": 118,
+      "hp": 146
+    },
+    "fastMoves": [
+      "ASTONISH",
+      "MUD_SHOT",
+      "SAND_ATTACK"
+    ],
+    "isShadow": true,
+    "isMega": false
+  },
+  {
     "id": "PALOSSAND",
     "name": "Palossand",
     "types": [
@@ -28478,6 +28595,26 @@
       "SAND_ATTACK"
     ],
     "isShadow": false,
+    "isMega": false
+  },
+  {
+    "id": "PALOSSAND_SHADOW",
+    "name": "Palossand (Shadow)",
+    "types": [
+      "GHOST",
+      "GROUND"
+    ],
+    "baseStats": {
+      "atk": 178,
+      "def": 178,
+      "hp": 198
+    },
+    "fastMoves": [
+      "ASTONISH",
+      "MUD_SHOT",
+      "SAND_ATTACK"
+    ],
+    "isShadow": true,
     "isMega": false
   },
   {
@@ -30432,8 +30569,8 @@
     "isMega": false
   },
   {
-    "id": "CRAMORANT_GULPING",
-    "name": "Cramorant (Gulping)",
+    "id": "CRAMORANT_GORGING",
+    "name": "Cramorant (Gorging)",
     "types": [
       "FLYING",
       "WATER"
@@ -30451,8 +30588,8 @@
     "isMega": false
   },
   {
-    "id": "CRAMORANT_GORGING",
-    "name": "Cramorant (Gorging)",
+    "id": "CRAMORANT_GULPING",
+    "name": "Cramorant (Gulping)",
     "types": [
       "FLYING",
       "WATER"
