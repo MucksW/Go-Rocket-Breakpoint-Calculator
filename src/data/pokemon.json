@@ -26546,6 +26546,25 @@
     "isMega": false
   },
   {
+    "id": "SLIGGOO_HISUIAN",
+    "name": "Sliggoo (Hisuian)",
+    "types": [
+      "DRAGON",
+      "STEEL"
+    ],
+    "baseStats": {
+      "atk": 153,
+      "def": 190,
+      "hp": 151
+    },
+    "fastMoves": [
+      "WATER_GUN",
+      "TACKLE"
+    ],
+    "isShadow": false,
+    "isMega": false
+  },
+  {
     "id": "GOODRA",
     "name": "Goodra",
     "types": [
@@ -26560,6 +26579,26 @@
     "fastMoves": [
       "WATER_GUN",
       "DRAGON_BREATH"
+    ],
+    "isShadow": false,
+    "isMega": false
+  },
+  {
+    "id": "GOODRA_HISUIAN",
+    "name": "Goodra (Hisuian)",
+    "types": [
+      "DRAGON",
+      "STEEL"
+    ],
+    "baseStats": {
+      "atk": 211,
+      "def": 255,
+      "hp": 190
+    },
+    "fastMoves": [
+      "WATER_GUN",
+      "DRAGON_TAIL",
+      "IRON_TAIL"
     ],
     "isShadow": false,
     "isMega": false
