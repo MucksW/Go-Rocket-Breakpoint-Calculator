@@ -22343,7 +22343,8 @@
     },
     "fastMoves": [
       "SHADOW_CLAW",
-      "SNARL"
+      "SNARL",
+      "SUCKER_PUNCH"
     ],
     "isShadow": false,
     "isMega": false
