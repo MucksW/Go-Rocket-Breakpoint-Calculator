@@ -1197,6 +1197,13 @@
       "power": 5,
       "turns": 2
     },
+    "KOWTOW_CLEAVE": {
+      "id": "KOWTOW_CLEAVE",
+      "name": "Kowtow Cleave",
+      "type": "DARK",
+      "power": 75,
+      "turns": 1
+    },
     "LAST_RESORT": {
       "id": "LAST_RESORT",
       "name": "Last Resort",
@@ -1482,6 +1489,13 @@
       "name": "Ominous Wind",
       "type": "GHOST",
       "power": 45,
+      "turns": 1
+    },
+    "OMINOUS_WIND_PLUS": {
+      "id": "OMINOUS_WIND_PLUS",
+      "name": "Ominous Wind+",
+      "type": "GHOST",
+      "power": 50,
       "turns": 1
     },
     "ORIGIN_PULSE": {

@@ -23548,6 +23548,27 @@
     "isMega": false
   },
   {
+    "id": "CHANDELURE_MEGA",
+    "name": "Chandelure (Mega)",
+    "types": [
+      "GHOST",
+      "FIRE"
+    ],
+    "baseStats": {
+      "atk": 335,
+      "def": 182,
+      "hp": 155
+    },
+    "fastMoves": [
+      "HEX",
+      "FIRE_SPIN",
+      "INCINERATE",
+      "ASTONISH"
+    ],
+    "isShadow": false,
+    "isMega": true
+  },
+  {
     "id": "CHANDELURE_SHADOW",
     "name": "Chandelure (Shadow)",
     "types": [
