@@ -1456,6 +1456,13 @@
       "power": 70,
       "turns": 1
     },
+    "NIGHT_SHADE_PLUS": {
+      "id": "NIGHT_SHADE_PLUS",
+      "name": "Night Shade+",
+      "type": "GHOST",
+      "power": 55,
+      "turns": 1
+    },
     "NIGHT_SLASH": {
       "id": "NIGHT_SLASH",
       "name": "Night Slash",
