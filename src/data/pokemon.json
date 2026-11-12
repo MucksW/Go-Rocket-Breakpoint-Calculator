@@ -1793,6 +1793,28 @@
     "isMega": false
   },
   {
+    "id": "CLEFABLE_MEGA",
+    "name": "Clefable (Mega)",
+    "types": [
+      "FAIRY",
+      "NONE"
+    ],
+    "baseStats": {
+      "atk": 253,
+      "def": 205,
+      "hp": 216
+    },
+    "fastMoves": [
+      "CHARGE_BEAM",
+      "POUND",
+      "ZEN_HEADBUTT",
+      "CHARM",
+      "FAIRY_WIND"
+    ],
+    "isShadow": false,
+    "isMega": true
+  },
+  {
     "id": "VULPIX",
     "name": "Vulpix",
     "types": [

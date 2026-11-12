@@ -1393,6 +1393,13 @@
       "power": 90,
       "turns": 1
     },
+    "MOONBLAST_PLUS": {
+      "id": "MOONBLAST_PLUS",
+      "name": "Moonblast+",
+      "type": "FAIRY",
+      "power": 80,
+      "turns": 1
+    },
     "MOONGEIST_BEAM": {
       "id": "MOONGEIST_BEAM",
       "name": "Moongeist Beam",
@@ -2015,6 +2022,13 @@
       "type": "WATER",
       "power": 65,
       "turns": 1
+    },
+    "SOAK": {
+      "id": "SOAK",
+      "name": "Soak",
+      "type": "WATER",
+      "power": 6,
+      "turns": 2
     },
     "SOLAR_BEAM": {
       "id": "SOLAR_BEAM",
