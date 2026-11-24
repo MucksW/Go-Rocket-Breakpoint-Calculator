@@ -1797,7 +1797,7 @@
     "name": "Clefable (Mega)",
     "types": [
       "FAIRY",
-      "NONE"
+      "FLYING"
     ],
     "baseStats": {
       "atk": 253,
